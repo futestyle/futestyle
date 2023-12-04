@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #productContainer {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    #titleAndImage {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 50%;
+    }
+
+    #title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #productImage {
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    #productDetails {
+      width: 50%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #price {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #description {
+      margin-bottom: 7px;
+    }
+
+    #addToCart {
+      background-color: transparent;
+      color: green;
+      padding: 8px 16px;
+      font-size: 16px;
+      border: 2px solid green;
+      cursor: pointer;
+      margin-top: 10px; /* Adicionei margem superior para separar do texto */
+    }
+
+    #mainImage {
+      width: 60%;
+      height: auto;
+    }
+
+    #smallImage {
+      width: 20%;
+      height: auto;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="productContainer">
+    <div id="titleAndImage">
+      <div id="productImage" onclick="changeImage()">
+        <img src="file:///C:/Users/RafaelCarvalho/Desktop/site%20html/b4fd841d%20(1).jpeg" id="mainImage">
+      </div>
+      <H1> CLIQUE NA IMAGEM PARA VER MAIS FOTOS DA CAMISOLA </H1>
+    </div>
+    <div id="productDetails">
+      <div id="smallImage">
+        <img src="file:///C:/Users/RafaelCarvalho/Desktop/site%20html/rafael%20loja.webp">
+      </div>
+      <div id="title">REPLICA CAMISA PRINCIPAL TEMPORADA 23/24 JUVENTUS </div>
+      <p id="description">
+      <button id="addToCart">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+
+  <script>
+    var images = [
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/b4fd841d%20(1).jpeg',
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/56180917.jpeg',
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/5963aead.jpeg',
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/792e24e6.jpeg',
+	  'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/511ada04.jpeg',
+	  'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/b203df04.jpeg',
+	  'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/f2025a36.jpeg',
+	  'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/2416e25a.jpeg',
+	  'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/2dbfa17c.jpeg',
+    ];
+
+    var currentIndex = 0;
+
+    function changeImage() {
+      var imageElement = document.getElementById('mainImage');
+      currentIndex = (currentIndex + 1) % images.length;
+      imageElement.src = images[currentIndex];
+    }
+  </script>
+</body>
+</html>

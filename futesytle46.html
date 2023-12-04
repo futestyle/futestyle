@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    #cart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div id="cart">
+  <h2>Seu Carrinho</h2>
+  <div id="cart-items"></div>
+  <p>Total: R$<span id="total">0.00</span></p>
+  <button onclick="checkout()">Finalizar Compra</button>
+</div>
+
+<script>
+  // Exemplo de produtos
+  const products = [
+    { id: 1, name: 'Camiseta', price: 20.00 },
+    { id: 2, name: 'Calça Jeans', price: 40.00 },
+    { id: 3, name: 'Tênis', price: 30.00 }
+  ];
+
+  let cart = [];
+
+  function addToCart(product) {
+    cart.push(product);
+    updateCart();
+  }
+
+  function updateCart() {
+    const cartItemsElement = document.getElementById('cart-items');
+    const totalElement = document.getElementById('total');
+    
+    cartItemsElement.innerHTML = '';
+
+    let total = 0;
+
+    cart.forEach(item => {
+      const itemElement = document.createElement('div');
+      itemElement.classList.add('product');
+      itemElement.innerHTML = `<p>${item.name}</p><p>R$${item.price.toFixed(2)}</p>`;
+      cartItemsElement.appendChild(itemElement);
+      total += item.price;
+    });
+
+    totalElement.textContent = total.toFixed(2);
+  }
+
+  function checkout() {
+    alert('Compra finalizada!');
+    cart = [];
+    updateCart();
+  }
+</script>
+
+</body>
+</html>

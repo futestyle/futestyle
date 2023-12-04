@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+     #productContainer img {
+      width: 60%;
+      border: 4px solid Black; /* Adiciona um contorno preto às imagens */
+    }
+    #productContainer {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    #titleAndImage {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 50%;
+    }
+
+    #title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #productImage {
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    #productDetails {
+      width: 50%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #price {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #description {
+      margin-bottom: 7px;
+    }
+
+    #addToCart {
+      background-color: transparent;
+      color: green;
+      padding: 8px 16px;
+      font-size: 16px;
+      border: 2px solid green;
+      cursor: pointer;
+    }
+
+    #mainImage {
+      width: 60%;
+      height: auto;
+    }
+
+    #smallImage {
+      width: 20%;
+      height: auto;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+  
+  </style>
+</head>
+<body>
+  <div id="productContainer">
+    <div id="titleAndImage">
+      <div id="productImage" onclick="changeImage()">
+        <img src="file:///C:/Users/RafaelCarvalho/Desktop/site%20html/eafb23db%20(4).jpeg" id="mainImage">
+      </div>
+      <h1>CLIQUE NA IMAGEM PARA VER MAIS FOTOS DA CAMISOLA</h1>
+    </div>
+    <div id="productDetails">
+      <div id="smallImage">
+        <img src="file:///C:/Users/RafaelCarvalho/Desktop/site%20html/rafael%20loja.webp">
+      </div>
+      <div id="title">REPLICA CAMISA 2 TEMPORADA 23/24 DO BENFICA</div>
+      <div id="price">35,00€</div>
+      <button id="addToCart" onclick="addToCart()">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+
+  <script>
+          var images = [
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/eafb23db%20(2).jpeg',
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/f6820134.jpeg',
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/774b83fb.jpeg',
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/0c7991f9.jpeg',
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/ba35b95a.jpeg',
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/cdcc8244.jpeg',
+      'file:///C:/Users/RafaelCarvalho/Desktop/site%20html/172c1c40.jpeg',
+    ];
+    var currentIndex = 0;
+
+    function changeImage() {
+      var imageElement = document.getElementById('mainImage');
+      currentIndex = (currentIndex + 1) % images.length;
+      imageElement.src = images[currentIndex];
+    }
+
+    function addToCart() {
+      // You can change the URL below to the desired page
+      window.location.href = "futesytle46.html";
+    }
+  </script>
+</body>
+</html>
+
